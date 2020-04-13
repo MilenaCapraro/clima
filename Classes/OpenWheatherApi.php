@@ -35,14 +35,36 @@ class OpenWheatherApi {
 
         $clima = $request->getBody();
 
-        //Converter para objeto
+        //Serializa objeto
         $objClima = json_decode($clima);
+        $objSerializado = Serialize($objClima);
+        $caminhoArquivo ="./cache/clima.txt";
+        file_put_contents($caminhoArquivo, $objSerializado);
 
         return $objClima;
     }
     
     public function getClima(): Clima {
-        $objGenerico = $this->getDataWheather();
+        //$objGenerico = $this->getDataWheather();
+        $conteudoAtualizacao = file_get_contents("./cache/controle_cache_txt");
+        //Recupera os dados de atualização
+        $arrayAtualizacao = explode("#", $conteudoAtualizacao);
+        $dataAtualizacao = $arrayAtualizacao [0];
+        $dataAtual = time();
+        
+        if ($dataAtual - $dataAtualizacao >=300){
+            //Atualiza o cache
+            $objGenerico = $this->getDataWheather();
+            $arrayAtualizacao[0] = time;
+            $dadosArquivo = $arrayAtualizacao[0]."#".$arrayAtualizacao[1];
+            file_get_contents("./cache/controle_cache.txt", $dadosArquivo);
+        } else{
+            $conteudoArquivo = file_get_contents("./cache/clima.txt");
+            
+            $objGenerico = unserialize($conteudoArquivo);
+        }
+        
+        
         
         $cli = new Clima();
         
