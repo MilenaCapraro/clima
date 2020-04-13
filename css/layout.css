@@ -1,0 +1,136 @@
+/* * - quer dizer que o que está configurado dentro dele vale para todo 
+o código */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Cambria;
+    padding: 10px;
+    background-color: #e03c06;
+
+}
+
+/*Estruturas do site*/
+.header{
+    padding: 30px;
+    text-align: center;
+    background-color: #ffcc99;
+}
+
+.header h1{
+    font-size: 50px;
+}
+
+.nav{
+    overflow: hidden; /*para desabilitar o zoom do mouse na barra do menu*/
+    background-color:#333;
+}
+
+.nav a{
+    float: left;
+    display: block; /*Como se fosse uma tag H1*/
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav a:hover{ /*Faz o fundo ficar branco e as letras ficarem pretas (o contrário do site)*/
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+.card{
+    background-color: #ffcc99;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.rightCol{
+    float: left;
+    width: 25%;
+    background-color: #e03c06;
+    padding-left: 20px;
+   
+}
+
+.footer{
+    padding: 20px;
+    text-align: center;
+    background-color: #ffcc99;
+    margin-top: 20px;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Configurações para monitores/navegadores que tem até 800px*/
+@media screen and (max-width: 800px){
+    .leftCol, .rightCol{
+        width:100%;
+        padding:0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .nav a{
+        float: none;
+        width:100%;
+    }
+}
+
+@font-face{
+    font-family: sant;
+    src: url(../font/SantEliaRoughLine.otf);
+}
+
+@font-face{
+    font-family: santb;
+    src: url(../font/SantEliaRoughAltBoldThrDEMO.otf);
+}
+
+@font-face{
+    font-family: aileron;
+    src: url(../font/Aileron-UltraLight.otf);
+}
+
+
+#a{
+    font-family: sant;
+    text-align: center;
+    color: black;
+    font-size:60px    
+}
+
+#b{
+    font-family: santb;
+    text-align: center;
+}
+
+#c{
+    font-family: sant;
+    font-size:20px;
+}
+
+
+h2{
+    font-size:25px;
+    font-family:sant;
+}
+
+h3{
+    font-family:sant;
+    font-size: 26px;
+}
+
+h4{
+    font-family:cambria;
+}
