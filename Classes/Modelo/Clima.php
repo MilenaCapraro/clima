@@ -14,6 +14,7 @@ class Clima {
     public $pressao;
     public $descricao;
     public $icone;
+    public $visitas;
 
     //Converte de kelvin para celsius
     public function getTemperaturaCelsius() : float {

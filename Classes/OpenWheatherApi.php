@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 require 'Modelo/Clima.php';
+require 'visitas.php';
 
 use GuzzleHttp\Client;
 use Classes\Modelo\Clima;
@@ -49,6 +50,9 @@ class OpenWheatherApi {
     }
 
     public function getClima(): Clima {
+         $visita = new visita();
+        $visita->newVisita();
+        
         
         //Recupera os dados de atualizacao
         $conteudoAtualizacao = file_get_contents("./cache/controle_cache.txt");
@@ -88,6 +92,7 @@ class OpenWheatherApi {
         $cli->pressao = $objGenerico->main->pressure;
         $cli->descricao = $objGenerico->weather[0]->description;
         $cli->icone = $objGenerico->weather[0]->icon;
+        $cli->visitas =  $visita->getVisitas();
         
         return $cli;
     }

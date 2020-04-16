@@ -10,7 +10,7 @@ $clima = $openWheater->getClima();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/layout.css" rel="stylesheet" type="text/css">
-       
+
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
     </head>
@@ -53,66 +53,71 @@ $clima = $openWheater->getClima();
         <!--Fim do menu-->
 
         <main role="main">
+            <ul mr-auto>
+                <span>Visitas <?php echo $clima->visitas?></span>
+            </ul>
+               
+            
             <div class="container-fluid text-center" >
                 <h3>Tempo real em <?php echo $clima->cidade ?></h3>
                 <h4>Código da cidade - <?php echo $clima->codCidade ?></h4>
-
+                
                 <div class="container">
                     <div class="card" >
-                        
+
                         <div class="card" style="background-color: #C0E5F6">
-                        <div class="row text-center">
-                            <div class="col-md-12">
-                                <p id="a">Temperatura:</p>
-                            </div>
-                            <br>
+                            <div class="row text-center">
+                                <div class="col-md-12">
+                                    <p id="a">Temperatura:</p>
+                                </div>
+                                <br>
 
-                            <div class="col col-md-4">
-                                <img class="rounded-circle" width="100" height="100" src="img/c.png"/>   
-                                <h2><?php echo $clima->getTemperaturaCelsius() ?>ºC</h2>
-                                <h2>Celcius</h2>
-                            </div>
+                                <div class="col col-md-4">
+                                    <img class="rounded-circle" width="100" height="100" src="img/c.png"/>   
+                                    <h2><?php echo $clima->getTemperaturaCelsius() ?>ºC</h2>
+                                    <h2>Celcius</h2>
+                                </div>
 
-                            <div class="col col-md-4">
-                                <img class="rounded-circle" width="100" height="100" src="img/f.png"/>   
-                                <h2><?php echo $clima->getTemperaturaFahrenheit() ?>ºF</h2>
-                                <h2>Fahrenheit</h2>
-                            </div>
+                                <div class="col col-md-4">
+                                    <img class="rounded-circle" width="100" height="100" src="img/f.png"/>   
+                                    <h2><?php echo $clima->getTemperaturaFahrenheit() ?>ºF</h2>
+                                    <h2>Fahrenheit</h2>
+                                </div>
 
-                            <div class="col col-md-4">
-                                <img class="rounded-circle" width="100" height="100" src="img/k.png"/>   
-                                <h2><?php echo $clima->temperatura ?>º</h2>
-                                <h2>Kelvin</h2>
+                                <div class="col col-md-4">
+                                    <img class="rounded-circle" width="100" height="100" src="img/k.png"/>   
+                                    <h2><?php echo $clima->temperatura ?>º</h2>
+                                    <h2>Kelvin</h2>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        
+
                         <div class="card" style="background-color:#C0E5F6">
                             <div class="row text-center">
-                            <div class="col-md-12">
-                                <p id="a">Descrição do clima: <?php echo $clima->descricao ?></p>
-                            </div>
-                            <br>
+                                <div class="col-md-12">
+                                    <p id="a">Descrição do clima: <?php echo $clima->descricao ?></p>
+                                </div>
+                                <br>
 
-                            <div class="col col-md-4 ">
-                                <img class="rounded-circle" width="100" height="100" src="img/umidade.png"/>   
-                                <h2><?php echo $clima->humidade ?>%</h2>
-                                <h2>Umidade</h2>
-                            </div>
+                                <div class="col col-md-4 ">
+                                    <img class="rounded-circle" width="100" height="100" src="img/umidade.png"/>   
+                                    <h2><?php echo $clima->humidade ?>%</h2>
+                                    <h2>Umidade</h2>
+                                </div>
 
-                            <div class="col col-md-4 ">
-                                <img class="rounded-circle" width="100" height="100" src="img/pressao.png"/>   
-                                <h2><?php echo $clima->pressao ?>%</h2>
-                                <h2>Pressão do ar:</h2>
-                            </div>
+                                <div class="col col-md-4 ">
+                                    <img class="rounded-circle" width="100" height="100" src="img/pressao.png"/>   
+                                    <h2><?php echo $clima->pressao ?>%</h2>
+                                    <h2>Pressão do ar:</h2>
+                                </div>
 
-                            <div class="col col-md-4 ">
-                                <img class="rounded-circle" width="100" height="100" src="img/vento.png">   
-                                <h2><?php echo $clima->velocidadeVento ?>km/h</h2>
-                                <h2>Velocidade do vento:</h2>
+                                <div class="col col-md-4 ">
+                                    <img class="rounded-circle" width="100" height="100" src="img/vento.png">   
+                                    <h2><?php echo $clima->velocidadeVento ?>km/h</h2>
+                                    <h2>Velocidade do vento:</h2>
+                                </div>
+                                <br>
                             </div>
-                            <br>
-                        </div>
                         </div>
                     </div>
                 </div>
